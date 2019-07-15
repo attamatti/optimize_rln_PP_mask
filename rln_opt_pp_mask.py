@@ -77,7 +77,7 @@ if os.path.isdir('OptPP') == False:
     subprocess.call(['mkdir','OptPP'])
 
 # range for model threshold
-prange =[0.01 * x for x in range(-10,10,2)]
+prange =[0.01 * x for x in range(-5,6,2)]
 threshlist = [ float(thresh)+ (x * float(thresh)) for x in prange]
 
 ## make the mask combinations
@@ -105,6 +105,7 @@ results = []
 count = 0
 bincount = 0
 bins = [0.01 * x for x in range(1,101,10)]
+bins.append(100.0)
 for i in vals:
     result = do_mask_PP(indata,i[0],i[1],i[2],apix)
     for k in result[3].split('\n'):
@@ -122,8 +123,6 @@ for i in vals:
         sys.stdout.write('==')
         sys.stdout.flush()
         bincount+=1
-        if bincount == len(bins):
-            bincount = len(bins)-1
 
 sys.stdout.write('==\n')
 sys.stdout.flush()
