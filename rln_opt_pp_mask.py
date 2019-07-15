@@ -143,4 +143,4 @@ maxres.sort(key=lambda x: float(x[4]),reverse=True)
 print('\n-- Highest scoring masks --\n')
 print('Thresold\tHM\tSM\tReso\tbFact')
 for i in maxres:
-    print('{0}\t\t{1}\t{2}\t{3:.2f}\t{4}'.format(i[0],i[1],i[2],round(float(i[3]),2),i[4])) 
+    print('{0}\t{1}\t{2}\t{3:.2f}\t{4}'.format(i[0],i[1],i[2],round(float(i[3]),2),i[4])) 
