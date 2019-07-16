@@ -133,11 +133,11 @@ results.sort(key=lambda x: float(x[3]))
 resresults = []
 for i in results:
     if i[5] == False and float(i[3]) != 2*float(apix):
-        resresults.append(i[5])
+        resresults.append(i[3])
 
 maxres = []
 for i in results:
-    if i[5] == max(resresults):
+    if i[3] == max(resresults):
         maxres.append(i)
 maxres.sort(key=lambda x: float(x[4]),reverse=True)
 print('\n-- Highest scoring masks --\n')
